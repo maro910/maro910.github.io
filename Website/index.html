@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<link type ="text/css" rel="stylesheet" href="main.css" />
+		<title>COol Website</title>
+
+		<script>
+			function banner() {
+				var text = confirm("Are you sure you want to do this?");
+				return text;
+			}
+
+			function answer() {
+				var radio = document.getElementsByName("trivia")
+				var selection = false;
+				var message = "";
+
+				for(var i=0; i < radio.length; i++) {
+					if(radio[i].value == "yes" && radio[i].checked == true) {
+						selection = true;
+					} //End of if statement
+				} //End for loop
+
+				if(selection == true) {
+					message = message + "<b><p style='color:green'>Way to go!</p></b>";
+				} else {
+					message = message + "<b><p style='color:red'>Try again my friend.</p></b>";
+				}
+				document.getElementById("response").innerHTML = message; 
+			} //End Function Answer
+		</script>
+
+	</head>
+
+	<body id="background">
+
+		<a href="#" onclick="return banner()">
+			<header id="banner">Hey, <span class="wrap-text">this is my Header!</span> WElcome </header>
+		</a>
+
+		<nav>
+			<ul id="navmenu">
+				<li class="navitem"><a href="index.html">Home</a></li>
+				<li class="navitem"><a href="about.html">About</a></li>
+				<li class="navitem"><a href="#">Contact</a></li>
+				<li class="navitem"><a href="#">Games</a></li>
+			</ul>
+		</nav>
+<!-- -->
+		<div class="rightside">
+			This is our division tag called rightside. You'll see how we can even out columns
+		</div>
+
+		<div class="leftside">
+			This is our other division tag called leftside. This is the leftside of the column.
+		</div>
+
+		<div class="clearfloat"></div>
+
+		<h1>Games!!!</h1>
+		<p class="paragraph">In this <i>website</i>, you can find <strong>information</strong> <u>about all sorts </u>of fun games.</p>
+		<center>Mario!</center>
+
+		<ol>
+			<div class="wrap-list">
+				<li class="listitem">Chess </li>
+				<li class="listitem">Card Games</li>
+				<li class="listitem">Dominoes</li>
+			</div>
+
+			<div class="wrap-trivia">
+				<h2>Trivia Question: </h2>
+				<p> What is <span class="wrap-text">Mario's</span> favorite game series?</p>
+				<form>
+					<div id="response"></div>
+					<input type="radio" name = "trivia" value="no"> Super Mario <br>
+					<input type="radio" name = "trivia" value="yes"> Fire EMblem <br>
+					<input type="radio" name = "trivia" value="no"> Final Fantasy <br>
+					<input type="radio" name = "trivia" value="no"> Animal Crossing<br>
+					<input id="button" type="button" value="Click Here" onclick="answer()">
+				</form>
+			</div>
+		</ol>
+		<img src="Images/Animals/chinchillaz.jpg" />
+		<hr />
+
+		<a href="https://youtube.com">MY favorite Website</a>
+		<video width="400" height="230" controls autoplay>
+			<source src="http://www.w3schools.com/HTML/mov_bbb.mp4" type="video/mp4">
+			<source src="http://www.w3schools.com/HTML/mov_bbb.ogg" type="video/ogg">
+			Your browser does not support HTML5 video.
+		</video>
+
+
+		<footer id="footer">Some cool stuff</footer>
+	</body>
+
+</html>
